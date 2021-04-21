@@ -5,7 +5,7 @@ import math
 
 base_url = 'https://api.covalenthq.com/v1/'
 uniswap_block = '12273059'
-sushiswap_block = '12271902'
+sushiswap_block = '12273059'
 token0 = ['WBTC', 'USDC','WETH', 'DAI']
 token1 = ['WETH', 'USDT']
 tx_hash = ""
@@ -99,7 +99,7 @@ def get_swap(token1, token2, volume1, volume2,tx, api,block, uniswap_block):
       raw2 = response.json()['data']['items']
       total2 = int(volume2)/math.pow(10, raw2[0]['contract_decimals'])
       money2 = total2 * raw2[0]['quote_rate']
-      status = '#Uniswap from {} ${} (~${:,.2f}) to {} ${} (~${:,.2f}) https://etherscan.io/tx/{}'.format(total1, token1, money1, total2, token2,money2, tx)
+      status = '🚨🚨🚨 Swap Alert!! \n#Uniswap 🦄 from {} ${} (~${:,.2f}) to {} ${} (~${:,.2f}) https://etherscan.io/tx/{}'.format(total1, token1, money1, total2, token2,money2, tx)
       api.update_status(status)
   return str(block)
 
