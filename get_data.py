@@ -88,7 +88,7 @@ def get_swap(token1, token2, volume1, volume2,tx, api,block, uniswap_block):
   raw = response.json()['data']['items']
   total1 = int(volume1)/math.pow(10, raw[0]['contract_decimals'])
   money1 = total1 * raw[0]['quote_rate']
-  if total1 > 50000 :
+  if total1 > 100000 :
       uniswap_block = str(block)
       print("new block " + uniswap_block)
       url = base_url + "pricing/tickers/"
