@@ -39,7 +39,8 @@ while True :
         d = get_data.extract_data_log(list_data[i], real_token[i], api,uniswap_block)
         uniswap_block = d
       time.sleep(60)
-    except :
+    except Exception as e :
+      print(e)
       print('Oops.. something went wrong!')
   
   
